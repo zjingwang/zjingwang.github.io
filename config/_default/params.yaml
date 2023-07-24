@@ -16,9 +16,6 @@ style:
 
 # E.g. Person, Organization, LocalBusiness, Project, EducationalOrganization
 siteType: Person
-icon: images/icon.png
-publisherName: WANG Chucheng
-publisherLogo:
 
 highlight:
   handler: highlightjs
@@ -44,7 +41,7 @@ math:
 
 comment:
   # Options: disqus, commento, valine and utterances.
-  handler:
+  handler: disqus
 
   # disqus:
   #   shortname:

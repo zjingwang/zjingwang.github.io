@@ -1,21 +1,21 @@
 ---
-title: Example Author
-role: Example Role
-avatar: images/icon.png
-bio: Aenean vel bibendum quam. Aliquam at mollis quam. Proin efficitur.
+title: 关于我
+role: 咸鱼
+avatar: images/lufei.jpg
+bio: 宿迁人，目前在南京打工，喜欢前端开发，区块链等。
 organization:
-  name: Example Organization
+  name: 公司
   url: https://example.com/
 social:
   - icon: envelope
     iconPack: fas
-    url: mailto:example@example.com
+    url: mailto:jing2290426141@gmail.com
   - icon: twitter
     iconPack: fab
-    url: https://example.com/
+    url: https://github.com/zjingwang
   - icon: github
     iconPack: fab
-    url: https://example.com/
+    url: https://github.com/zjingwang
 ---
 
 ## Self Introduction
