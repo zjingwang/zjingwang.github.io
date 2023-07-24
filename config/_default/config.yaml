@@ -4,7 +4,7 @@ title: onceking
 # Uncomment when not installing with Hugo Modules
 # theme: eureka
 # Comment when not installing with Hugo Modules
-theme: eureka
+theme: wangchucheng.com/hugo-eureka
 
 paginate: 3
 enableEmoji: true
