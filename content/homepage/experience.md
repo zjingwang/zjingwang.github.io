@@ -1,13 +1,13 @@
 ---
-title: Experience
+title: 个人经历
 draft: false
 experiences:
-  - title: Example Role 1
+  - title: 学习经历
     organization:
-      name: Example Organization 1
+      name: 南京邮电大学
       url: https://example.org
-    dates: "2019 - Present"
-    location: Country
+    dates: "2014-2021"
+    location: 中国
     writeup: >
       Donec scelerisque egestas augue at tempor. Fusce faucibus magna in.
 
@@ -17,12 +17,12 @@ experiences:
 
       - Nam tincidunt diam quis lorem rutrum ullamcorper.
 
-  - title: Example Role 2
+  - title: 工作经历
     organization:
-      name: Example Organization 2
+      name: 能力有限公司
       url: https://example.org
-    dates: "2017 - 2019"
-    location: Country
+    dates: "2021 - 至今"
+    location: 中国
     writeup: >
       **Aliquam** at **rutrum** ante. In sed quam faucibus.
 
@@ -35,7 +35,7 @@ widget:
 
   sidebar:
     # Options: left and right. Leave blank to hide.
-    position: left
+    position:
     # Options: sm, md, lg and xl. Default is md.
     scale:
 

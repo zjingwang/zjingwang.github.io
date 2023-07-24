@@ -3,11 +3,14 @@ title: Nested Chapter
 description: Nested chapter of example doc
 toc: true
 authors:
+    - onceking
 tags:
 categories:
 series:
 date: '2020-10-16'
-lastmod: '2020-10-16'
+lastmod: 
+    - :fileModTime
+    - :default
 draft: false
 ---
 
