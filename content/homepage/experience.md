@@ -4,18 +4,12 @@ draft: false
 experiences:
   - title: 学习经历
     organization:
-      name: 南京邮电大学
+      name: NJUPT 
       url: https://example.org
     dates: "2014-2021"
     location: 中国
     writeup: >
-      Donec scelerisque egestas augue at tempor. Fusce faucibus magna in.
-
-      - Suspendisse lacinia mauris a laoreet vehicula.
-
-      - Aenean tincidunt enim vitae ante blandit tempor.
-
-      - Nam tincidunt diam quis lorem rutrum ullamcorper.
+      
 
   - title: 工作经历
     organization:
@@ -24,7 +18,7 @@ experiences:
     dates: "2021 - 至今"
     location: 中国
     writeup: >
-      **Aliquam** at **rutrum** ante. In sed quam faucibus.
+  
 
 weight: 3
 widget:

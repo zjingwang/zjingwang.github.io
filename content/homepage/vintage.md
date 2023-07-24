@@ -2,8 +2,8 @@
 title: Vintage
 draft: false
 slogan: We are all in the gutter, but some of us are looking at the stars.
-imgLeft: images/hero-left.jpg
-imgRight: images/hero-right.jpg
+imgLeft: 
+imgRight: 
 
 weight: 4
 widget:

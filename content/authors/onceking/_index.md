@@ -18,19 +18,10 @@ social:
     url: https://github.com/zjingwang
 ---
 
-## Self Introduction
+## 基本信息
 
 喜欢历史，喜欢文学，但迫于生计从事开发的菜机程序员一枚，NJUPT工学硕士。
 
-## Details  
+## 其他  
 
-Nunc pellentesque vitae:
-- Morbi accumsan nibh efficitur diam molestie, non dignissim diam facilisis.
-- Donec dignissim leo in mollis faucibus.
-- Donec blandit lacus a pellentesque fermentum.
-
-Donec mollis sollicitudin:
-- Nunc dictum purus ornare purus consectetur, eu pellentesque massa ullamcorper.
-- Aliquam eu leo vitae justo aliquam tincidunt.
-- Fusce non massa id augue interdum feugiat sed et nulla.
-- Vivamus molestie augue in tristique laoreet.
+又菜又爱玩的云顶玩家

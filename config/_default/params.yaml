@@ -1,8 +1,8 @@
 mainSections:
   - posts
-description: Eureka is a elegant and powerful theme for Hugo.
+description: 介绍一些日常。
 
-repoEditURL:
+repoEditURL: https://github.com/zjingwang/about-me
 
 dateFormat:
 
@@ -16,6 +16,10 @@ style:
 
 # E.g. Person, Organization, LocalBusiness, Project, EducationalOrganization
 siteType: Person
+
+publisherName: onceking
+
+icon: avatar.png
 
 highlight:
   handler: highlightjs
