@@ -1,7 +1,7 @@
 ---
-title: 日常记录
+title: 我的日常生活和工作记录
 layout: doc-list
-description: 一些生活随笔
+description: 记录一下日常
 lastmod:
     - .git
 ---
