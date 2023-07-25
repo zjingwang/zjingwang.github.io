@@ -1,4 +1,4 @@
-baseURL: https://zjingwang.github.io/
+baseURL: https://zjingwang.github.io/about-me
 title: onceking
 
 # Uncomment when not installing with Hugo Modules
@@ -59,3 +59,23 @@ frontmatter:
 
 disqusShortname: https-zjingwang-github-io
 copyright: Owned by onceking
+
+menu:
+  friends:
+    - name: 童欧巴博客
+      url: 'https://hungryturbo.com/'
+      weight: 20
+    - identifier: QingXu
+      name: QingXu
+      url: 'https://blog.qingxu.live'
+      weight: 19
+    - identifier: 蜘蛛抱蛋
+      name: 蜘蛛抱蛋
+      url: 'https://blog.zzbd.org/'
+      weight: 18
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+

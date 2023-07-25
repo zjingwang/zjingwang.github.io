@@ -1,0 +1,212 @@
+{{/* layouts/_default/stats.html */}}
+{{ define "main" }}
+
+{{- $.Scratch.Add "stats" slice -}}
+{{- range .Site.RegularPages -}}
+{{- $.Scratch.Add "stats" (dict "title" .Title "slug" .Slug "year" (.Date.Format "2006") "month" (.Date.Format "2006-01") "hour" (.Date.Format "15") "week" (.Date.Format "Monday") "count" .WordCount) -}}
+{{- end -}}
+
+{{ $hasToc := and (in .TableOfContents "<li>" ) (.Params.toc) }}
+    {{ $hasSidebar := or ($hasToc) (.Params.series) }}
+    <style>
+        .chart {
+            margin-top: 15px;
+            width: 100%;
+            height: 350px;
+        }
+    </style>
+    <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+        <div
+            class="col-span-2 {{ if not $hasSidebar }} {{- print "lg:col-start-2" -}} {{ end }} lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">{{ .Title }}</h1>
+
+        <div class="flex flex-wrap flex-row items-center my-2 text-tertiary-text">
+            <div class="mr-6 my-2">
+                <i class="fas fa-calendar mr-1"></i>
+                <span>{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</span>
+            </div>
+        </div>
+
+        {{ $featured := partial "utils/get-featured" . }}
+        {{ with $featured }}
+        <div class="my-4">
+            {{ . }}
+        </div>
+        {{ end }}
+
+        <div class="content">
+            <p id="basic-info">
+                {{ .Content }}
+            </p>
+        </div>
+    </div>
+
+    {{ if $hasSidebar}}
+    <div class="col-span-2">
+        {{ if .GetTerms "series" }}
+        {{ partial "components/post-series.html" . }}
+        {{ end }}
+        {{ if $hasToc }}
+        {{ partial "components/post-toc.html" . }}
+        {{ end }}
+    </div>
+    {{ end }}
+    </div>
+
+
+
+
+    <script src="https://lib.baomitu.com/echarts/5.0.0/echarts.min.js"></script>
+    <script>
+        const data = {{- $.Scratch.Get "stats" -}};
+        function showChart(id, title, type, d) {
+            var chart = echarts.init(document.getElementById(id));
+            var xData = [];
+            var yData = [];
+            d.forEach(function(item) {
+                xData.push(item[0]);
+                yData.push(item[1]);
+            });
+            var option = {
+                title : { text : title },
+                tooltip : { trigger : 'axis' },
+                xAxis : [ { type : 'category', data : xData } ],
+                yAxis : [ { type : 'value' } ],
+                grid : { x : 35, y : 45, x2 : 35, y2 : 35 },
+                series : [ {
+                    type : 'bar',
+                    name : type,
+                    data : yData,
+                    markLine : {
+                        data : [ {
+                            type : 'average',
+                            name : '平均值'
+                        }],
+                        itemStyle : {
+                            normal : {
+                                color : '#4087bd'
+                            }
+                        }
+                    },
+                    itemStyle : {
+                        normal : {
+                            color : '#87cefa'
+                        }
+                    }
+                }]
+            };
+            chart.setOption(option);
+        }
+
+        window.addEventListener('load', function() {
+            basicInfo();
+            yearStats();
+            monthStats();
+            hourStats();
+            weekStats();
+        });
+        function basicInfo() {
+            const articles = {{ len (where .Site.RegularPages "Section" "posts") }};
+            const pages = data.length - articles;
+            const comments = data.reduce((count, article) => count + article.comments, 0);
+            const words = data.reduce((count, article) => count + article.count, 0);
+            document.querySelector('#basic-info').innerHTML = `
+    <span>文章：<strong><a href="/">${articles}</a></strong> 篇</span>；<span>页面：<strong><a href="/">${pages}</a></strong> 篇</span>；<span>总字数：<strong>${words}</strong></span>；
+  `;
+        };
+
+        function yearStats() {
+            const yearGroup = {};
+            data.forEach(article => {
+                const year = parseInt(article.year);
+                if(!yearGroup.hasOwnProperty(year)) {
+                    yearGroup[year] = 0;
+                }
+                yearGroup[year] += 1;
+            });
+
+            const d = [];
+            for(let i = 2009; i <= (new Date().getFullYear()); i++) {
+                d.push([i, yearGroup[i] || 0]);
+            }
+            showChart('year-stat', '文章数 - 按年统计', '文章数', d);
+        }
+        function monthStats() {
+            const monthGroup = {};
+            data.forEach(article => {
+                if(!monthGroup.hasOwnProperty(article.month)) {
+                    monthGroup[article.month] = 0;
+                }
+                monthGroup[article.month] += 1;
+            });
+            const d = [];
+            for(let year = 2009; year <= (new Date().getFullYear()); year++) {
+                for(let month = 1; month < 13; month++) {
+                    const text = `${year}-${month < 10 ? '0' + month : month}`;
+                    d.push([text, monthGroup[text] || 0]);
+                }
+            }
+            showChart('month-stat', '文章数 - 按月统计', '文章数', d);
+        }
+        function hourStats() {
+            const hourGroup = {};
+            data.forEach(article => {
+                const hour = parseInt(article.hour);
+                if(!hourGroup.hasOwnProperty(hour)) {
+                    hourGroup[hour] = 0;
+                }
+                hourGroup[hour] += 1;
+            });
+            const d = [
+                ['00:00-01:00'],
+                ['01:00-02:00'],
+                ['02:00-03:00'],
+                ['03:00-04:00'],
+                ['04:00-05:00'],
+                ['05:00-06:00'],
+                ['06:00-07:00'],
+                ['07:00-08:00'],
+                ['08:00-09:00'],
+                ['09:00-10:00'],
+                ['10:00-11:00'],
+                ['11:00-12:00'],
+                ['12:00-13:00'],
+                ['13:00-14:00'],
+                ['14:00-15:00'],
+                ['15:00-16:00'],
+                ['16:00-17:00'],
+                ['17:00-18:00'],
+                ['18:00-19:00'],
+                ['19:00-20:00'],
+                ['20:00-21:00'],
+                ['21:00-22:00'],
+                ['22:00-23:00'],
+                ['23:00-24:00']
+            ].map((item, key) => {
+                item[1] = hourGroup[key] || 0;
+                return item;
+            });
+            showChart('hour-stat', '文章数 - 按时段统计', '文章数', d);
+        }
+        function weekStats() {
+            const weekGroup = {};
+            data.forEach(article => {
+                if(!weekGroup.hasOwnProperty(article.week)) {
+                    weekGroup[article.week] = 0;
+                }
+                weekGroup[article.week] += 1;
+            });
+            const d = [
+                ['星期一', weekGroup.Monday],
+                ['星期二', weekGroup.Tuesday],
+                ['星期三', weekGroup.Wednesday],
+                ['星期四', weekGroup.Thursday],
+                ['星期五', weekGroup.Friday],
+                ['星期六', weekGroup.Saturday],
+                ['星期日', weekGroup.Sunday]
+            ];
+            showChart('weekday-stat', '文章数 - 按星期几统计', '文章数', d);
+        }
+    </script>
+
+    {{ end }}

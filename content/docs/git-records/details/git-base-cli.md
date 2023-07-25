@@ -9,6 +9,7 @@ series:
 date: 2023-07-25
 lastmod: 2023-07-25
 draft: false
+layout: archive
 ---
 
 git常用命令
