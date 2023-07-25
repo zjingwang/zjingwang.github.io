@@ -1,6 +1,6 @@
 ---
-title: 关于zetasql的c++demo
-description: zetasql相关资料是真的少啊
+title: 关于zetasql的c++ demo
+description: 编译c++ demo，然后用java调用
 toc: true
 authors: onceking
 tags: ['zetasql','dp']
