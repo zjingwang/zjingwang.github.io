@@ -1,33 +1,135 @@
+{{/* layouts/_default/search.html */}}
 {{ define "main" }}
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+    <article class="mx-6 my-8">
+        <h1 id="search-count" class="font-bold text-3xl text-primary-text"></h1>
+    </article>
+    <div id="search-result" class="bg-secondary-bg rounded overflow-hidden px-4 divide-y">
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
-<script src="{{ "js/search.js" | absURL }}"></script>
-<section class="resume-section p-3 p-lg-5 d-flex flex-column">
-    <div class="my-auto" >
-        <a href="/">返回首页</a>
-        <br/>
-        <br/>
-        <form action="{{ "search" | absURL }}">
-        <label for="search-query" style="color: #ccc; display: block">搜索本站</label>
-        <input id="search-query" name="s" placeholder="search..." style="width: 300px; height: 30px"/>
-        </form>
-        <div id="search-results">
-            <h2>匹配页面</h2>
-        </div>
-    </div>
-</section>
-<!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->
-<script id="search-result-template" type="text/x-js-template">
-    <div id="summary-${key}">
-        <h4><a href="${link}">${title}</a></h4>
-        <p>${snippet}</p>
-        ${ isset tags }<p>Tags: ${tags}</p>${ end }
-        ${ isset categories }<p>Categories: ${categories}</p>${ end }
-    </div>
-</script>
 <script>
-    document.getElementById('search-query').focus();
+    document.addEventListener('DOMContentLoaded', async () => {
+        const qs = new URLSearchParams(location.search);
+        const searchResult = document.querySelector('#search-result');
+        const searchCount = document.querySelector('#search-count');
+
+        const fuseOptions = {
+            shouldSort: true,
+            includeMatches: true,
+            threshold: 0.0,
+            tokenize: true,
+            location: 0,
+            distance: 100,
+            maxPatternLength: 32,
+            minMatchCharLength: 1,
+            keys: [{
+                name: "title",
+                weight: 0.8
+            },
+                {
+                    name: "summary",
+                    weight: 0.5
+                },
+                {
+                    name: "tags",
+                    weight: 0.3
+                },
+                {
+                    name: "date",
+                    weight: 0.3
+                },
+            ]
+        };
+
+        let fuse = null
+
+        async function getFuse() {
+            if (fuse == null) {
+                const resp = await fetch('/index.json', {
+                    method: 'get'
+                })
+                const indexData = await resp.json()
+                fuse = new Fuse(indexData, fuseOptions);
+            }
+            return fuse
+        }
+
+        function render(items) {
+            console.log(items);
+            return items.map(item => {
+                item = item.item
+                return `
+<div class="px-2 py-6">
+  <div class="flex flex-col-reverse lg:flex-row justify-between">
+    <div class="w-full lg:w-2/3">
+      <div class="my-2">
+        <div class="mb-4">
+          <a href="${item.permalink}" class="font-bold text-xl hover:text-eureka">${item.title}</a>
+        </div>
+        <div class="content">
+          ${item.summary}
+          <p class="more">
+            <a href="${item.permalink}" title="${item.title}">阅读全文<span class="meta-nav">→</span></a>
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-wrap flex-row items-center my-2 text-tertiary-text">
+        <div class="mr-6 my-2">
+          <i class="fas fa-calendar mr-1"></i>
+          <span>${item.date}</span>
+        </div>
+        <div class="mr-6 my-2">
+          <a href="${item.permalink}#waline-comments" title="${item.title}">
+            <i class="fas fa-comment mr-1"></i>
+            <span>${item.comments > 0 ? item.comments + ' 条评论' : '暂无评论'}</span>
+          </a>
+        </div>
+        <div class="mr-6 my-2">
+          <i class="fas fa-clock mr-1"></i>
+          <span>${item.time} 分钟阅读时长</span>
+        </div>
+      </div>
+    </div>
+    <div class="w-full lg:w-1/3 mb-4 lg:mb-0 lg:ml-8">
+      ${item.featuredImage ? `<img src="${item.featuredImage}" class="w-full" alt="Featured Image">` : ''}
+    </div>
+  </div>
+</div>`;
+            }).join('');
+        }
+
+        function updateDOM(html, keyword, number) {
+            document.title = document.title.replace(/包含关键词.*?文章/, `包含关键词 ${keyword} 的文章`)
+            searchResult.innerHTML = html
+            searchCount.innerHTML = `共查询到 ${number} 篇文章`
+        }
+
+        async function search(searchString) {
+            console.log(searchString);
+            let result = [];
+            if(searchString) {
+                const fuse = await getFuse()
+                result = fuse.search(searchString)
+            }
+            const html = render(result)
+            updateDOM(html, searchString, result.length)
+        }
+
+        document.querySelectorAll('input[name="q"]').forEach(el => el.value = qs.get('q'));
+        search(qs.get('q') || '')
+
+        window.blogSearch = function(keyword) {
+            if(!keyword) {
+                return;
+            }
+
+            history.pushState('', '', location.pathname + '?q=' + encodeURIComponent(keyword));
+            document.querySelectorAll('input[name="q"]').forEach(el => el.value = keyword);
+            search(keyword);
+        }
+    })
 </script>
 {{ end }}
