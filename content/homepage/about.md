@@ -2,6 +2,7 @@
 title: OnceKing
 draft: false
 role: 员工
+enableComment： false
 avatar: images/lufei.jpg
 bio: 江湖人称吴彦祖，目前在南京打工，就职于能力有限公司，喜欢前端开发和区块链相关，目前在研究零知识证明和差分隐私。
 organization:
