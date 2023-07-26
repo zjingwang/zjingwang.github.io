@@ -1,7 +1,6 @@
 ---
 title: 个人经历
 draft: false
-enableComment: false
 experiences:
   - title: 学习经历
     organization:

@@ -45,10 +45,10 @@ math:
 
 comment:
   # Options: disqus, commento, valine and utterances.
-  handler: disqus
+  handler:
 
-  # disqus:
-  #   shortname:
+#   disqus:
+#     shortname: https-zjingwang-github-io-1
 
   # utterances:
   #   # Browse https://utteranc.es/ to see the options available.
@@ -61,13 +61,13 @@ comment:
   #   # If self-hosting, please enter the url (e.g. https://commento.example.com) here. Otherwise leave empty.
   #   url:
 
-  # valine:
-  #   # Browse https://valine.js.org/en/configuration.html to see the options available.
-  #   # You can list the key and value you want as below.
-  #   # Because Hugo's config params are case-insensitive, you need to add `-` or `_` before the uppercase letters.
-  #   # For example, `appId` should be written as `app-Id` or other acceptable formats.
-  #   app-Id:
-  #   app-Key:
+   valine:
+     # Browse https://valine.js.org/en/configuration.html to see the options available.
+     # You can list the key and value you want as below.
+     # Because Hugo's config params are case-insensitive, you need to add `-` or `_` before the uppercase letters.
+     # For example, `appId` should be written as `app-Id` or other acceptable formats.
+     app-Id: 94qQKNQckKxgDkpcnKXRfQfI-gzGzoHsz
+     app-Key: 9KAiqgTaWwlXz7QKlPQRvtVO
 
 diagram:
   handler: mermaid
