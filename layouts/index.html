@@ -1,10 +1,40 @@
 {{ define "main" }}
+<style>
+    .widget + .widget {
+        margin-top: 1rem;
+    }
+    .widget-title {
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    .widget-list li {
+        font-size: 0.9rem;
+    }
+    .bg-cover img {
+        opacity: 1;
+        transition: all .5s ease-in-out;
+        max-width: 100%;
+        height: auto;
+    }
+    .bg-cover img.dark {
+        opacity: 0;
+        height: 0;
+    }
+    .dark .bg-cover img.day {
+        opacity: 0;
+        height: 0;
+    }
+    .dark .bg-cover img.dark {
+        opacity: 1;
+        height: auto;
+    }
+</style>
 <div class="pl-scrollbar">
     <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
         <div class="max-w-screen-xl mx-auto" style="padding-top: 3rem">
             <div class="bg-local bg-cover">
-                <img class="day" src="images/banner-day.png" />
-                <img class="dark" src="images/banner.png" />
+                <img class="day" src="/banner-day.png" />
+                <img class="dark" src="/banner.png" />
             </div>
         </div>
         <!-- <article class="mx-6 my-7">
