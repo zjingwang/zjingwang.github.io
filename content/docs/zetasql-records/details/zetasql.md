@@ -6,8 +6,8 @@ authors: onceking
 tags: ['zetasql','dp']
 categories: ['zetasql','dp']
 series:
-date: '2023-07-24'
-lastmod: '2023-07-24'
+date: '2023-07-24T15:00:00+08:00'
+lastmod: '2023-07-26T09:59:00+08:00'
 draft: false
 ---
 

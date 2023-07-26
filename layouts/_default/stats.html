@@ -35,9 +35,17 @@
         {{ end }}
 
         <div class="content">
-            <p id="basic-info">
+            <div id="basic-info" class="my-4">
                 {{ .Content }}
-            </p>
+            </div>
+        </div>
+        <div id="year-stat" class="my-4" style="width: 100%;height:400px;">
+        </div>
+        <div id="month-stat" class="my-4" style="width: 100%;height:400px;">
+        </div>
+        <div id="hour-stat" class="my-4" style="width: 100%;height:400px;">
+        </div>
+        <div id="weekday-stat" class="my-4" style="width: 100%;height:400px;">
         </div>
     </div>
 
@@ -71,7 +79,7 @@
                 title : { text : title },
                 tooltip : { trigger : 'axis' },
                 xAxis : [ { type : 'category', data : xData } ],
-                yAxis : [ { type : 'value' } ],
+                yAxis : [ { type : 'value', data: yData } ],
                 grid : { x : 35, y : 45, x2 : 35, y2 : 35 },
                 series : [ {
                     type : 'bar',
@@ -111,7 +119,7 @@
             const comments = data.reduce((count, article) => count + article.comments, 0);
             const words = data.reduce((count, article) => count + article.count, 0);
             document.querySelector('#basic-info').innerHTML = `
-    <span>文章：<strong><a href="/">${articles}</a></strong> 篇</span>；<span>页面：<strong><a href="/">${pages}</a></strong> 篇</span>；<span>总字数：<strong>${words}</strong></span>；
+    <span>文章：<strong><a href="/#about">${articles}</a></strong> 篇</span>；<span>页面：<strong><a href="/#about">${pages}</a></strong> 篇</span>；<span>总字数：<strong>${words}</strong></span>；
   `;
         };
 
