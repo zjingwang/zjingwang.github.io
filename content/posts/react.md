@@ -2,6 +2,7 @@
 title: react+next.js
 description:
 toc: true
+enableComment: true
 authors:
   - onceking
 tags: ['react']
