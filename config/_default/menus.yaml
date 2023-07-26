@@ -1,6 +1,6 @@
 main:
   - name: 关于我
-    url: '#about'
+    url: /authors/onceking
     weight: 1
   - name: 文章
     url: /posts/
@@ -11,6 +11,9 @@ main:
   - name: 其他
     url: /blank
     weight: 4
+  - name: 日志
+    url: /cat
+    weight: 5
   - name: 统计
     url: /stats
     weight: 6
