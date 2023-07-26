@@ -11,9 +11,6 @@ main:
   - name: 其他
     url: /blank
     weight: 4
-  - name: 查询
-    url: /search
-    weight: 5
   - name: 统计
     url: /stats
     weight: 6

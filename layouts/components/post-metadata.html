@@ -1,0 +1,53 @@
+<!--
+{{/* layouts/partials/components/post_metadata.html */}}
+<div class="flex flex-wrap flex-row items-center my-2 text-tertiary-text">
+  <div class="mr-6 my-2">
+    <i class="fas fa-calendar mr-1"></i>
+    <span>{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</span>
+  </div>
+
+  {{- $slug := printf "/%s.html" .Slug}}
+  {{- $commentsData := (partialCached "utils/get-comments.html" .)}}
+
+  {{- $comments := slice }}
+  {{- range where $commentsData "url" "==" $slug}}
+  {{$comments = $comments | append .}}
+  {{- end}}
+  {{- $count := len $comments}}
+  <div class="mr-6 my-2">
+    <a href="{{ .Permalink }}#waline-comments" title="{{ .Title }}">
+      <i class="fas fa-comment mr-1"></i>
+      <span>{{- if gt $count 0}}{{$count}} 条评论{{else}}暂无评论{{end -}}</span>
+    </a>
+  </div>
+
+  <div class="mr-6 my-2">
+    <i class="fas fa-clock mr-1"></i>
+    <span>{{ i18n "readingTime" . }}</span>
+  </div>
+
+  {{ with .GetTerms "categories" }}
+  <div class="mr-6 my-2">
+    <i class="fas fa-folder mr-1"></i>
+    {{ range $index, $value := . }}
+    {{ if gt $index 0 }}
+    <span>, </span>
+    {{ end -}}
+    <a href="{{ .Permalink }}" class="hover:text-eureka">{{ .LinkTitle }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ with .GetTerms "series" }}
+  <div class="mr-6 my-2">
+    <i class="fas fa-th-list mr-1"></i>
+    {{ range $index, $value := . }}
+    {{ if gt $index 0 }}
+    <span>, </span>
+    {{ end -}}
+    <a href="{{ .Permalink }}" class="hover:text-eureka">{{ .LinkTitle }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+-->
