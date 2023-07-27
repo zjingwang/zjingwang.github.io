@@ -23,7 +23,7 @@
         <div class="flex flex-wrap flex-row items-center my-2 text-tertiary-text">
             <div class="mr-6 my-2">
                 <i class="fas fa-calendar mr-1"></i>
-                <span>{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</span>
+                <span>{{  .Lastmod.Format "2006年01月02日 15:04" }}</span>
             </div>
         </div>
 
@@ -215,6 +215,7 @@
             ];
             showChart('weekday-stat', '文章数 - 按星期几统计', '文章数', d);
         }
+    </script>
     </script>
 
     {{ end }}
