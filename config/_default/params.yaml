@@ -2,9 +2,11 @@ mainSections:
   - posts
 description: 介绍一些日常。
 
+date: 2023-07-21
+
 repoEditURL: https://github.com/zjingwang/about-me
 
-dateFormat:
+dateFormat: "2006-01-02"
 
 titleSeparator:
 
