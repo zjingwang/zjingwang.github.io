@@ -45,21 +45,20 @@ math:
 
 comment:
   # Options: disqus, commento, valine and utterances.
-  handler: disqus
+  handler: utterances
 
-  disqus:
-     shortname: https-zjingwang-github-io-1
+#  disqus:
+#     shortname: https-zjingwang-github-io-1
 
-  # utterances:
-  #   # Browse https://utteranc.es/ to see the options available.
-  #   # If you want the color scheme of utterances to follow eureka's, you can set `theme: eureka`.
-  #   repo:
-  #   issue-term:
-  #   theme:
+  utterances:
+     # Browse https://utteranc.es/ to see the options available.
+     # If you want the color scheme of utterances to follow eureka's, you can set `theme: eureka`.
+     repo: zjingwang/zjingwang.github.io
+     issue-term: pathname
 
-  # commento:
-  #   # If self-hosting, please enter the url (e.g. https://commento.example.com) here. Otherwise leave empty.
-  #   url:
+#  commento:
+#     # If self-hosting, please enter the url (e.g. https://commento.example.com) here. Otherwise leave empty.
+#     url: https://zjingwang.github.io/
 
 #   valine:
 #     # Browse https://valine.js.org/en/configuration.html to see the options available.
