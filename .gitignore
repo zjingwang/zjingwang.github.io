@@ -13,4 +13,6 @@ hugo.linux
 /.hugo_build.lock
 
 /.idea/
+/node_modules
 go.sum
+package-lock.json
