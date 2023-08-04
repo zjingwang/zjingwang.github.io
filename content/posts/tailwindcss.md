@@ -4,14 +4,14 @@ description: 记录一下在angular中使用tailwind
 toc: true
 enableComment: true
 authors:
-- onceking
-  tags: ['react']
-  categories: ['react']
-  series:
-  date: 2023-08-04T14:57:00+08:00
-  lastmod: 2023-08-04T14:57:00+08:00
-  featuredImage:
-  draft: false
+  - onceking 
+tags: ['angular']
+categories: ['angular']
+series:
+date: 2023-08-04T14:57:00+08:00
+lastmod: 2023-08-04T14:57:00+08:00
+featuredImage:
+draft: false
 ---
 
 在angular中使用tailwind
