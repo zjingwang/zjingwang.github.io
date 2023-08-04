@@ -21,7 +21,7 @@ siteType: Person
 
 publisherName: onceking
 
-icon: avatar.png
+icon: images/avatar.png
 
 highlight:
   handler: highlightjs

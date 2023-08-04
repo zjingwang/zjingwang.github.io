@@ -83,6 +83,7 @@ module.exports = {
 - 示例
 ```html
 <h1 class="text-2xl m-1 p-3 border-b">Test</h1>
-![img.png](img.png)
 ```
+- 结果
+![Result](/images/tailwindcss.png)
 
