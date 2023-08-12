@@ -10,7 +10,7 @@ categories: ['angular']
 series:
 date: 2023-08-04T14:57:00+08:00
 lastmod: 2023-08-04T14:57:00+08:00
-featuredImage:
+featuredImage: "/images/lufei.png"
 draft: false
 ---
 

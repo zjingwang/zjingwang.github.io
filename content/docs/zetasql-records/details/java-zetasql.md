@@ -9,6 +9,7 @@ series:
 date: '2023-07-24T16:59:00+08:00'
 lastmod: '2023-07-26T09:59:00+08:00'
 draft: false
+featuredImage: "/images/lufei.png"
 ---
 
 找到了谷歌差分隐私里的zetasql demo，用的是c++实现的，有点恶心

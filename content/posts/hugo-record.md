@@ -10,7 +10,7 @@ categories: ['hugo']
 series:
 date: 2023-07-26T16:32:00+08:00
 lastmod: 2023-07-26T16:32:00+08:00
-featuredImage:
+featuredImage: "/images/lufei.png"
 draft: false
 ---
 

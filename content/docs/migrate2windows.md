@@ -9,6 +9,7 @@ series:
 date: '2023-07-29T15:10:00+08:00'
 lastmod: '2023-07-29T5:10:00+08:00'
 draft: false
+featuredImage: "/images/lufei.png"
 ---
 
 把本git仓库从Linux换到了windows，记录下
