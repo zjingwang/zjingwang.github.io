@@ -10,7 +10,7 @@ categories: ['java']
 series:
 date: 2023-08-12T09:26:00+08:00
 lastmod: 2023-08-12T09:26:00+08:00
-featuredImage:
+featuredImage: "/images/lufei.png"
 draft: false
 ---
 

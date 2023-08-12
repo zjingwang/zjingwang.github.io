@@ -9,6 +9,7 @@ series: ['others']
 date: '2023-07-28T14:33:00+08:00'
 lastmod: '2023-08-27T14:33:00+08:00'
 draft: false
+featuredImage: "/images/lufei.png"
 ---
 
 <a href="https://peotik.com/" style="color: green; text-decoration: none;">诗词游戏</a>

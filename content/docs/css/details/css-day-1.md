@@ -9,8 +9,8 @@ tags: ['css']
 categories: ['css']
 series:
 date: 2023-08-08T19:26:00+08:00
-lastmod: 2023-08-08T19:26:00+08:00
-featuredImage:
+lastmod: 2023-08-08T19:26:00+08:00 
+featuredImage: "/images/lufei.png"
 draft: false
 ---
 

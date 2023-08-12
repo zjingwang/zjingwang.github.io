@@ -9,6 +9,7 @@ series: ['zetasql','dp']
 date: '2023-07-27T14:40:00+08:00'
 lastmod: '2023-07-27T14:40:00+08:00'
 draft: false
+featuredImage: "/images/lufei.png"
 ---
 
 因为之前用的docker太大，大概几个G，现在想着将c++代码编译成so文件吗，然后使用JNA调用，从而避免gcc的依赖。
