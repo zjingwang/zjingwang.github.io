@@ -1,6 +1,6 @@
 ---
-title: java一些记录
-description: 记录一下遇到的一些修饰器
+title: 记录一下遇到的一些springboot修饰器
+description: java的一些记录 
 toc: true
 enableComment: true
 authors:
@@ -14,7 +14,7 @@ featuredImage: "/images/lufei.png"
 draft: false
 ---
 
-### java springboot 跨域的问题
+## java springboot 跨域的问题
 - 在控制类上加 @CrossOrigin 修饰符
     ```java
     @CrossOrigin(origins = "*", maxAge = 3600)
@@ -30,7 +30,7 @@ draft: false
     }
     ```
 
-### 异常处理
+## 异常处理
 如果想给前端返回自定义的错误，可以使用全局的异常处理器:
 ```java
 @ControllerAdvice
