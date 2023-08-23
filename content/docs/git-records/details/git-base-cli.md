@@ -21,6 +21,11 @@ git常用命令
 ```shell
 git config credential.helper store
 ```
+如果token过期了，需要重新认证，执行一下命令
+```shell
+git config --unset  credential.helper
+
+```
 
 ## .gitignore不生效
 
