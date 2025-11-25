@@ -1,0 +1,48 @@
+# Cursor Rules for Hugo Static Site Project
+
+## Project Overview
+This is a Hugo static site project using the Eureka theme, deployed to GitHub Pages.
+
+## Technology Stack
+- **Static Site Generator**: Hugo (v0.110.0+)
+- **Theme**: Eureka (wangchucheng.com/hugo-eureka)
+- **Deployment**: GitHub Pages via GitHub Actions
+- **Content Format**: Markdown with frontmatter
+
+## Project Structure
+- `content/` - All content files (posts, docs, pages)
+- `config/_default/` - Hugo configuration files
+- `layouts/` - Custom templates and layouts
+- `static/` - Static assets (images, JS, CSS)
+- `assets/` - Source assets that may be processed
+- `.github/workflows/` - GitHub Actions workflows
+
+## Content Management
+- Content files are in Markdown format with YAML frontmatter
+- Posts go in `content/posts/`
+- Documentation goes in `content/docs/`
+- Pages go in `content/homepage/`
+- Author information in `content/authors/`
+
+## Code Style Guidelines
+- Use consistent Markdown formatting
+- Frontmatter should include: title, date, tags/categories when applicable
+- Follow existing content structure patterns
+- Use Chinese language for content (defaultContentLanguage: zh)
+
+## Hugo Commands
+- `hugo` - Build site locally
+- `hugo server` - Start local development server
+- `hugo --gc --minify` - Build for production with garbage collection and minification
+
+## Git Workflow
+- Main branch: `main`
+- Auto-deployment: Pushes to main trigger GitHub Actions workflow
+- Never commit `public/` directory (it's in .gitignore)
+
+## Important Notes
+- Base URL: https://zjingwang.github.io/
+- The site uses Hugo Modules for theme management
+- GitHub Actions automatically builds and deploys on push to main
+- Local development: run `hugo server` and visit http://localhost:1313
+
