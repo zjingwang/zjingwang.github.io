@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="skyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C3E50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#34495E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A252F;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGrad2" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFF9E6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#E8D5B7;stop-opacity:0.5" />
+    </radialGradient>
+  </defs>
+  
+  <!-- 夜空背景 -->
+  <rect width="800" height="600" fill="url(#skyGrad2)"/>
+  
+  <!-- 月亮（危楼上的月） -->
+  <circle cx="650" cy="120" r="40" fill="url(#moonGrad2)"/>
+  
+  <!-- 危楼（代表"月洒危楼"） -->
+  <g opacity="0.8">
+    <rect x="600" y="200" width="120" height="300" fill="#3D4A5C" stroke="#2C3E50" stroke-width="2"/>
+    <rect x="610" y="220" width="15" height="20" fill="#FFD700" opacity="0.6"/>
+    <rect x="635" y="220" width="15" height="20" fill="#FFD700" opacity="0.6"/>
+    <rect x="660" y="220" width="15" height="20" fill="#FFD700" opacity="0.6"/>
+    <rect x="685" y="220" width="15" height="20" fill="#FFD700" opacity="0.6"/>
+    <polygon points="590,200 660,140 730,200" fill="#4D5A6C" stroke="#2C3E50" stroke-width="2"/>
+  </g>
+  
+  <!-- 八念的象征元素（围绕中心排列） -->
+  
+  <!-- 一念：王侯将相（皇冠） -->
+  <g transform="translate(150, 150)" opacity="0.7">
+    <path d="M 0 -20 L -15 0 L -10 10 L 10 10 L 15 0 Z" fill="#FFD700"/>
+    <circle cx="0" cy="-15" r="3" fill="#FFA500"/>
+  </g>
+  
+  <!-- 二念：子孙满堂（家庭） -->
+  <g transform="translate(250, 250)" opacity="0.7">
+    <rect x="-15" y="0" width="30" height="25" fill="#8B7355" rx="3"/>
+    <polygon points="-15,0 0,-15 15,0" fill="#A0826D"/>
+    <circle cx="-8" cy="8" r="3" fill="#FFB6C1"/>
+    <circle cx="8" cy="8" r="3" fill="#FFB6C1"/>
+    <circle cx="0" cy="15" r="2" fill="#FFB6C1"/>
+  </g>
+  
+  <!-- 三念：镜破（破碎的镜子） -->
+  <g transform="translate(400, 200)" opacity="0.6">
+    <circle cx="0" cy="0" r="25" fill="#C0C0C0" stroke="#808080" stroke-width="2"/>
+    <line x1="-20" y1="-15" x2="20" y2="15" stroke="#808080" stroke-width="2"/>
+    <line x1="20" y1="-15" x2="-20" y2="15" stroke="#808080" stroke-width="2"/>
+  </g>
+  
+  <!-- 四念：信马由缰（马） -->
+  <g transform="translate(550, 350)" opacity="0.7">
+    <ellipse cx="0" cy="0" rx="20" ry="15" fill="#8B7355"/>
+    <ellipse cx="-15" cy="-10" rx="8" ry="12" fill="#8B7355"/>
+    <path d="M 15 0 Q 25 -5 30 0" stroke="#654321" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- 五念：蝇营狗苟（小人物） -->
+  <g transform="translate(200, 400)" opacity="0.6">
+    <ellipse cx="0" cy="0" rx="8" ry="10" fill="#6B6B6B"/>
+    <rect x="-6" y="0" width="12" height="15" fill="#7B7B7B" rx="2"/>
+  </g>
+  
+  <!-- 六念：大江中藕（莲藕） -->
+  <g transform="translate(350, 450)" opacity="0.7">
+    <ellipse cx="0" cy="0" rx="12" ry="30" fill="#D2B48C"/>
+    <ellipse cx="0" cy="-20" rx="8" ry="8" fill="#90EE90"/>
+    <ellipse cx="0" cy="20" rx="8" ry="8" fill="#90EE90"/>
+  </g>
+  
+  <!-- 七念：率性而由（自由的风） -->
+  <g transform="translate(500, 250)" opacity="0.6">
+    <path d="M 0 0 Q 10 -10 20 0 Q 30 10 40 0" stroke="#E0E0E0" stroke-width="2" fill="none"/>
+    <path d="M 5 5 Q 15 -5 25 5 Q 35 15 45 5" stroke="#E0E0E0" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- 八念：闭门击缶（门和乐器） -->
+  <g transform="translate(150, 350)" opacity="0.7">
+    <rect x="-20" y="-30" width="40" height="60" fill="#8B7355" stroke="#654321" stroke-width="2"/>
+    <circle cx="0" cy="40" r="15" fill="#D2B48C" stroke="#8B7355" stroke-width="2"/>
+  </g>
+  
+  <!-- 中心：自我（简化的面具，代表"活个别人摸样"） -->
+  <g transform="translate(400, 300)" opacity="0.8">
+    <ellipse cx="0" cy="0" rx="40" ry="50" fill="#E8D5B7" stroke="#D2B48C" stroke-width="2"/>
+    <ellipse cx="-12" cy="-10" rx="5" ry="8" fill="#4A4A4A"/>
+    <ellipse cx="12" cy="-10" rx="5" ry="8" fill="#4A4A4A"/>
+    <path d="M -15 10 Q 0 20 15 10" stroke="#8B6F47" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- 文字 -->
+  <text x="400" y="570" font-family="serif" font-size="18" fill="#E0E0E0" 
+        text-anchor="middle" opacity="0.8">自卖自夸</text>
+</svg>

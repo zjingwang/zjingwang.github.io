@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F0F8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D0E0F0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8D0E8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90C695;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6BA66F;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="sunGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFE5B4;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0.6" />
+    </radialGradient>
+  </defs>
+  
+  <!-- 天空背景 -->
+  <rect width="800" height="400" fill="url(#gradient1)"/>
+  
+  <!-- 草地 -->
+  <rect x="0" y="400" width="800" height="200" fill="url(#groundGrad)"/>
+  
+  <!-- 太阳/北斗星（代表前程） -->
+  <circle cx="700" cy="100" r="35" fill="url(#sunGrad)"/>
+  
+  <!-- 校园建筑（仙林、鼓楼） -->
+  <g opacity="0.8">
+    <!-- 左侧建筑（仙林） -->
+    <rect x="100" y="250" width="80" height="150" fill="#8B9DC3" stroke="#6B7D9B" stroke-width="2"/>
+    <rect x="120" y="280" width="15" height="20" fill="#FFD700" opacity="0.7"/>
+    <rect x="145" y="280" width="15" height="20" fill="#FFD700" opacity="0.7"/>
+    <polygon points="90,250 140,200 190,250" fill="#A8B8D3" stroke="#6B7D9B" stroke-width="2"/>
+    
+    <!-- 右侧建筑（鼓楼） -->
+    <rect x="500" y="220" width="100" height="180" fill="#9CADC8" stroke="#6B7D9B" stroke-width="2"/>
+    <rect x="520" y="250" width="20" height="25" fill="#FFD700" opacity="0.7"/>
+    <rect x="550" y="250" width="20" height="25" fill="#FFD700" opacity="0.7"/>
+    <rect x="580" y="250" width="20" height="25" fill="#FFD700" opacity="0.7"/>
+    <polygon points="490,220 550,160 610,220" fill="#B8C8D8" stroke="#6B7D9B" stroke-width="2"/>
+  </g>
+  
+  <!-- 长亭/走廊 -->
+  <g opacity="0.7">
+    <rect x="300" y="350" width="200" height="8" fill="#8B7355"/>
+    <line x1="300" y1="350" x2="300" y2="400" stroke="#8B7355" stroke-width="4"/>
+    <line x1="500" y1="350" x2="500" y2="400" stroke="#8B7355" stroke-width="4"/>
+    <line x1="350" y1="350" x2="350" y2="400" stroke="#8B7355" stroke-width="3"/>
+    <line x1="400" y1="350" x2="400" y2="400" stroke="#8B7355" stroke-width="3"/>
+    <line x1="450" y1="350" x2="450" y2="400" stroke="#8B7355" stroke-width="3"/>
+  </g>
+  
+  <!-- 飘零的花瓣 -->
+  <g opacity="0.6">
+    <ellipse cx="250" cy="320" rx="8" ry="12" fill="#FFB6C1" transform="rotate(-20 250 320)"/>
+    <ellipse cx="280" cy="340" rx="6" ry="10" fill="#FFC0CB" transform="rotate(15 280 340)"/>
+    <ellipse cx="320" cy="330" rx="7" ry="11" fill="#FFB6C1" transform="rotate(-30 320 330)"/>
+    <ellipse cx="360" cy="350" rx="5" ry="9" fill="#FFC0CB" transform="rotate(25 360 350)"/>
+  </g>
+  
+  <!-- 青衣少年剪影（左侧，代表"犹记青衣少年眸"） -->
+  <g opacity="0.6">
+    <ellipse cx="200" cy="380" rx="25" ry="30" fill="#4A5D6B"/>
+    <rect x="185" y="380" width="30" height="50" fill="#5A6D7B" rx="5"/>
+    <path d="M 200 430 Q 190 450 200 470 Q 210 450 200 430" fill="#4A5D6B"/>
+  </g>
+  
+  <!-- 前程路径（从校园延伸向远方，代表"前程如锦绣"） -->
+  <path d="M 400 400 Q 500 380 650 360" stroke="#FFD700" stroke-width="3" 
+        fill="none" stroke-dasharray="8,4" opacity="0.7"/>
+  
+  <!-- 文字 -->
+  <text x="400" y="550" font-family="serif" font-size="18" fill="#4A5568" 
+        text-anchor="middle" opacity="0.7">写于毕业</text>
+</svg>

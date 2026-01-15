@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- 背景渐变 - 从云端到谷底 -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F4F8;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#D4E8F0;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#B8D4E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8FA8B8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B7D8C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A5568;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFF9E6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#FFE5B4;stop-opacity:0.6" />
+    </radialGradient>
+  </defs>
+  
+  <!-- 天空背景 -->
+  <rect width="800" height="600" fill="url(#skyGradient)"/>
+  
+  <!-- 九月月亮（半圆，表示残缺） -->
+  <circle cx="650" cy="100" r="45" fill="url(#moonGradient)" opacity="0.8"/>
+  <path d="M 650 55 L 650 145 A 45 45 0 0 1 650 55 Z" fill="url(#skyGradient)"/>
+  
+  <!-- 城市剪影（右侧，代表"南京城的九月奇迹"） -->
+  <g opacity="0.7">
+    <rect x="500" y="200" width="30" height="180" fill="#2C3E50"/>
+    <rect x="540" y="150" width="25" height="230" fill="#34495E"/>
+    <rect x="580" y="180" width="35" height="200" fill="#2C3E50"/>
+    <rect x="630" y="120" width="28" height="260" fill="#34495E"/>
+    <rect x="680" y="200" width="30" height="180" fill="#2C3E50"/>
+    <!-- 窗户灯光 -->
+    <rect x="505" y="220" width="5" height="5" fill="#FFD700" opacity="0.6"/>
+    <rect x="545" y="170" width="5" height="5" fill="#FFD700" opacity="0.6"/>
+    <rect x="585" y="200" width="5" height="5" fill="#FFD700" opacity="0.6"/>
+    <rect x="635" y="140" width="5" height="5" fill="#FFD700" opacity="0.6"/>
+  </g>
+  
+  <!-- 云层（代表"云端"） -->
+  <g opacity="0.6">
+    <ellipse cx="200" cy="80" rx="60" ry="25" fill="#FFFFFF"/>
+    <ellipse cx="230" cy="80" rx="50" ry="20" fill="#FFFFFF"/>
+    <ellipse cx="250" cy="80" rx="40" ry="18" fill="#FFFFFF"/>
+    <ellipse cx="150" cy="120" rx="55" ry="22" fill="#FFFFFF"/>
+    <ellipse cx="180" cy="120" rx="45" ry="20" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- 坠落轨迹（虚线，表示从云端坠入谷底） -->
+  <path d="M 220 100 Q 300 200 380 350" stroke="#8B7D6B" stroke-width="2" 
+        fill="none" stroke-dasharray="5,5" opacity="0.5"/>
+  
+  <!-- 残缺的翅膀（左侧，代表"残缺的比翼"） -->
+  <g transform="translate(150, 300)">
+    <!-- 左翅膀（完整） -->
+    <path d="M 0 0 Q -40 -20 -50 -40 Q -45 -60 -30 -70 Q -15 -75 0 -70 Q 15 -75 30 -70 Q 45 -60 50 -40 Q 40 -20 0 0" 
+          fill="#C8A882" opacity="0.7" stroke="#8B6F47" stroke-width="1.5"/>
+    <!-- 羽毛细节 -->
+    <path d="M -20 -30 Q -30 -40 -25 -50" stroke="#8B6F47" stroke-width="1" fill="none" opacity="0.6"/>
+    <path d="M 20 -30 Q 30 -40 25 -50" stroke="#8B6F47" stroke-width="1" fill="none" opacity="0.6"/>
+    
+    <!-- 右翅膀（残缺，只有一半） -->
+    <path d="M 0 0 Q 40 -20 50 -40 Q 45 -50 30 -55 Q 15 -50 0 -45" 
+          fill="#C8A882" opacity="0.5" stroke="#8B6F47" stroke-width="1.5"/>
+    <!-- 残缺的边缘（锯齿状） -->
+    <path d="M 0 -45 L 5 -50 L 0 -55 L -5 -50 Z" fill="#8B6F47" opacity="0.7"/>
+    <path d="M 15 -50 L 20 -55 L 15 -60 L 10 -55 Z" fill="#8B6F47" opacity="0.7"/>
+  </g>
+  
+  <!-- 乡野泥地（底部，代表"乡野烂泥"） -->
+  <rect x="0" y="450" width="800" height="150" fill="url(#groundGradient)"/>
+  <ellipse cx="200" y="480" rx="80" ry="20" fill="#5A4A3A" opacity="0.6"/>
+  <ellipse cx="400" y="500" rx="100" ry="25" fill="#5A4A3A" opacity="0.6"/>
+  <ellipse cx="600" y="490" rx="90" ry="22" fill="#5A4A3A" opacity="0.6"/>
+  
+  <!-- 寻找的足迹（散落的点，代表"找寻你的痕迹"） -->
+  <g opacity="0.4">
+    <circle cx="250" cy="480" r="3" fill="#FFD700"/>
+    <circle cx="350" cy="500" r="2.5" fill="#FFD700"/>
+    <circle cx="450" cy="490" r="3" fill="#FFD700"/>
+    <circle cx="550" cy="510" r="2.5" fill="#FFD700"/>
+    <circle cx="300" cy="520" r="2" fill="#FFD700"/>
+    <circle cx="500" cy="530" r="2.5" fill="#FFD700"/>
+  </g>
+  
+  <!-- 文字标题（可选，如果需要显示标题） -->
+  <text x="400" y="570" font-family="serif" font-size="16" fill="#4A5568" 
+        text-anchor="middle" opacity="0.6">矫揉造作</text>
+</svg>

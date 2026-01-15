@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5F9EA0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4682B4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skyGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0F2F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8D4E0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 天空 -->
+  <rect width="800" height="300" fill="url(#skyGrad3)"/>
+  
+  <!-- 水面 -->
+  <rect x="0" y="300" width="800" height="300" fill="url(#waterGrad)"/>
+  
+  <!-- 长亭 -->
+  <g transform="translate(300, 200)" opacity="0.8">
+    <rect x="-100" y="0" width="200" height="15" fill="#8B7355" rx="2"/>
+    <line x1="-100" y1="0" x2="-100" y2="120" stroke="#8B7355" stroke-width="6"/>
+    <line x1="100" y1="0" x2="100" y2="120" stroke="#8B7355" stroke-width="6"/>
+    <line x1="-50" y1="0" x2="-50" y2="120" stroke="#8B7355" stroke-width="4"/>
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#8B7355" stroke-width="4"/>
+    <line x1="50" y1="0" x2="50" y2="120" stroke="#8B7355" stroke-width="4"/>
+    <!-- 亭顶 -->
+    <polygon points="-110,0 0,-30 110,0" fill="#A0826D" stroke="#8B7355" stroke-width="2"/>
+  </g>
+  
+  <!-- 青烟（从水面升起） -->
+  <g opacity="0.5">
+    <path d="M 350 400 Q 360 350 370 300 Q 380 250 390 200" 
+          stroke="#90EE90" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M 360 400 Q 370 350 380 300 Q 390 250 400 200" 
+          stroke="#98FB98" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M 370 400 Q 380 350 390 300 Q 400 250 410 200" 
+          stroke="#90EE90" stroke-width="2" fill="none" opacity="0.4"/>
+  </g>
+  
+  <!-- 绿水浮萍 -->
+  <g opacity="0.7">
+    <ellipse cx="200" cy="450" rx="25" ry="15" fill="#228B22" transform="rotate(-20 200 450)"/>
+    <ellipse cx="250" cy="480" rx="20" ry="12" fill="#32CD32" transform="rotate(15 250 480)"/>
+    <ellipse cx="500" cy="460" rx="22" ry="14" fill="#228B22" transform="rotate(-10 500 460)"/>
+    <ellipse cx="550" cy="490" rx="18" ry="11" fill="#32CD32" transform="rotate(25 550 490)"/>
+    <ellipse cx="600" cy="470" rx="24" ry="13" fill="#228B22" transform="rotate(-15 600 470)"/>
+  </g>
+  
+  <!-- 残花败柳 -->
+  <g transform="translate(150, 250)" opacity="0.6">
+    <!-- 残花 -->
+    <ellipse cx="0" cy="0" rx="8" ry="12" fill="#FFB6C1" transform="rotate(-30 0 0)"/>
+    <ellipse cx="20" cy="10" rx="6" ry="10" fill="#FFC0CB" transform="rotate(20 20 10)"/>
+    <!-- 败柳（垂下的枝条） -->
+    <path d="M 0 0 Q -10 20 -15 40 Q -20 60 -25 80" stroke="#8B7355" stroke-width="2" fill="none"/>
+    <path d="M 5 5 Q -5 25 -10 45 Q -15 65 -20 85" stroke="#8B7355" stroke-width="2" fill="none"/>
+    <ellipse cx="-25" cy="80" rx="3" ry="8" fill="#90EE90" opacity="0.5"/>
+  </g>
+  
+  <!-- 哀铃（悬挂在长亭） -->
+  <g transform="translate(400, 200)" opacity="0.7">
+    <line x1="0" y1="0" x2="0" y2="20" stroke="#C0C0C0" stroke-width="2"/>
+    <ellipse cx="0" cy="25" rx="8" ry="12" fill="#D3D3D3" stroke="#A0A0A0" stroke-width="1"/>
+    <circle cx="0" cy="30" r="2" fill="#FFD700"/>
+    <!-- 声音波纹 -->
+    <circle cx="0" cy="25" r="15" fill="none" stroke="#E0E0E0" stroke-width="1" opacity="0.4"/>
+    <circle cx="0" cy="25" r="20" fill="none" stroke="#E0E0E0" stroke-width="1" opacity="0.3"/>
+  </g>
+  
+  <!-- 孤舟 -->
+  <g transform="translate(500, 380)" opacity="0.8">
+    <ellipse cx="0" cy="0" rx="40" ry="15" fill="#8B7355" stroke="#654321" stroke-width="2"/>
+    <rect x="-35" y="-5" width="70" height="8" fill="#A0826D" rx="2"/>
+    <!-- 船桨 -->
+    <line x1="-30" y1="0" x2="-50" y2="-20" stroke="#654321" stroke-width="3"/>
+    <ellipse cx="-50" cy="-20" rx="4" ry="8" fill="#8B7355"/>
+  </g>
+  
+  <!-- 折翼鸟（在天空中，代表"折翼鸟盼天明"） -->
+  <g transform="translate(600, 200)" opacity="0.7">
+    <!-- 身体 -->
+    <ellipse cx="0" cy="0" rx="12" ry="18" fill="#8B7355"/>
+    <!-- 完整的左翅膀 -->
+    <path d="M -12 0 Q -25 -15 -30 -25 Q -28 -35 -20 -40 Q -12 -38 -8 -30 Q -10 -20 -12 0" 
+          fill="#A0826D" stroke="#654321" stroke-width="1"/>
+    <!-- 折翼的右翅膀（残缺） -->
+    <path d="M 12 0 Q 25 -15 30 -25 Q 28 -30 20 -32 Q 12 -30 8 -25" 
+          fill="#A0826D" opacity="0.6" stroke="#654321" stroke-width="1"/>
+    <!-- 头部 -->
+    <ellipse cx="0" cy="-15" rx="6" ry="8" fill="#654321"/>
+    <!-- 眼睛（望向天空，盼天明） -->
+    <circle cx="-2" cy="-15" r="2" fill="#FFD700"/>
+    <!-- 残缺的边缘 -->
+    <path d="M 8 -25 L 12 -30 L 8 -35 Z" fill="#654321" opacity="0.8"/>
+  </g>
+  
+  <!-- 红斤翠袖（长亭中的身影） -->
+  <g transform="translate(400, 280)" opacity="0.6">
+    <ellipse cx="0" cy="0" rx="10" ry="12" fill="#4A4A4A"/>
+    <rect x="-8" y="0" width="16" height="30" fill="#DC143C" rx="2" opacity="0.7"/>
+    <rect x="-12" y="5" width="24" height="20" fill="#228B22" rx="3" opacity="0.6"/>
+  </g>
+  
+  <!-- 文字 -->
+  <text x="400" y="570" font-family="serif" font-size="18" fill="#4A5568" 
+        text-anchor="middle" opacity="0.8">妙手偶得</text>
+</svg>

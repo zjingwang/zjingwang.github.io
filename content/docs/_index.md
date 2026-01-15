@@ -1,5 +1,5 @@
 ---
-title: 我的日常生活和工作记录
+title: 日常
 layout: doc-list
 description: 记录一下日常
 lastmod:

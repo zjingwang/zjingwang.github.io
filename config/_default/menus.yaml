@@ -8,12 +8,12 @@ main:
   - name: 日常
     url: /docs/
     weight: 3
-  - name: 其他
-    url: /blank
+  - name: 诗词
+    url: /poet/
     weight: 4
-  - name: 日志
+  - name: 文章汇总
     url: /cat
     weight: 5
-  - name: 统计
+  - name: 文章统计
     url: /stats
     weight: 6
