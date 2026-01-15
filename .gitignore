@@ -16,3 +16,6 @@ hugo.linux
 /node_modules
 go.sum
 package-lock.json
+
+# Cursor chat history
+.specstory/
