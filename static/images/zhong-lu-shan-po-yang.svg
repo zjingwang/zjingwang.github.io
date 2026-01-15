@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="nightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A2E;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F3460;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGrad3" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#E8E8E8;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#C0C0C0;stop-opacity:0.5" />
+    </radialGradient>
+    <linearGradient id="iceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#B0E0E6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 夜空背景（夜如冰） -->
+  <rect width="800" height="600" fill="url(#nightGrad)"/>
+  
+  <!-- 月亮（冰冷） -->
+  <circle cx="650" cy="120" r="35" fill="url(#moonGrad3)"/>
+  <circle cx="645" cy="115" r="3" fill="#A0A0A0" opacity="0.6"/>
+  <circle cx="655" cy="125" r="2" fill="#A0A0A0" opacity="0.6"/>
+  
+  <!-- 冰面（夜如冰） -->
+  <rect x="0" y="400" width="800" height="200" fill="url(#iceGrad)"/>
+  <path d="M 0 400 Q 200 395 400 400 T 800 400" stroke="#E0F6FF" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M 0 450 Q 300 445 600 450 T 800 450" stroke="#B0E0E6" stroke-width="1.5" fill="none" opacity="0.4"/>
+  
+  <!-- 孤独的人影（叹伶仃） -->
+  <g transform="translate(400, 350)" opacity="0.7">
+    <ellipse cx="0" cy="0" rx="12" ry="15" fill="#4A4A4A"/>
+    <rect x="-10" y="0" width="20" height="45" fill="#5A5A5A" rx="3"/>
+    <path d="M -10 45 Q 0 50 10 45" fill="#4A4A4A"/>
+    <!-- 低头的姿态 -->
+    <ellipse cx="0" cy="-5" rx="10" ry="12" fill="#4A4A4A" transform="rotate(-10 0 -5)"/>
+  </g>
+  
+  <!-- 思念的符号（相思想忆相思病） -->
+  <g opacity="0.5">
+    <!-- 心形（相思） -->
+    <path d="M 200 250 Q 200 200 250 200 Q 300 200 300 250 Q 300 300 250 350 Q 200 300 200 250" 
+          fill="#FFB6C1" opacity="0.4" stroke="#FF69B4" stroke-width="2"/>
+    <path d="M 500 280 Q 500 240 540 240 Q 580 240 580 280 Q 580 320 540 360 Q 500 320 500 280" 
+          fill="#FFB6C1" opacity="0.3" stroke="#FF69B4" stroke-width="1.5"/>
+    <!-- 循环的线条（无止无休无止境） -->
+    <path d="M 300 300 Q 350 280 400 300 Q 450 320 500 300" 
+          stroke="#FFB6C1" stroke-width="2" fill="none" stroke-dasharray="5,3" opacity="0.4"/>
+    <path d="M 300 320 Q 350 300 400 320 Q 450 340 500 320" 
+          stroke="#FFB6C1" stroke-width="1.5" fill="none" stroke-dasharray="3,5" opacity="0.3"/>
+  </g>
+  
+  <!-- 分离与结合（分，心也倾，合，心也倾） -->
+  <g transform="translate(300, 250)" opacity="0.6">
+    <!-- 分离的心 -->
+    <path d="M -30 0 Q -30 -20 -20 -30 Q -10 -35 0 -30 Q 10 -35 20 -30 Q 30 -20 30 0 Q 30 20 0 40 Q -30 20 -30 0" 
+          fill="#FFB6C1" opacity="0.5" stroke="#FF69B4" stroke-width="2"/>
+    <!-- 结合的心 -->
+    <path d="M 50 0 Q 50 -20 60 -30 Q 70 -35 80 -30 Q 90 -35 100 -30 Q 110 -20 110 0 Q 110 20 80 40 Q 50 20 50 0" 
+          fill="#FFB6C1" opacity="0.5" stroke="#FF69B4" stroke-width="2"/>
+    <!-- 连接线 -->
+    <line x1="30" y1="0" x2="50" y2="0" stroke="#FF69B4" stroke-width="2" stroke-dasharray="3,3" opacity="0.5"/>
+  </g>
+  
+  <!-- 星星（点缀夜空） -->
+  <g opacity="0.6">
+    <circle cx="150" cy="100" r="2" fill="#FFD700"/>
+    <circle cx="250" cy="80" r="1.5" fill="#FFD700"/>
+    <circle cx="500" cy="90" r="2" fill="#FFD700"/>
+    <circle cx="600" cy="70" r="1.5" fill="#FFD700"/>
+    <circle cx="100" cy="150" r="1.5" fill="#FFD700"/>
+  </g>
+  
+  <!-- 文字 -->
+  <text x="400" y="570" font-family="serif" font-size="18" fill="#E0E0E0" 
+        text-anchor="middle" opacity="0.8">中吕山坡羊</text>
+</svg>

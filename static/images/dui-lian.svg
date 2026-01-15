@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="autumnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFE082;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB74D;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGrad4" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFF9E6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#E8D5B7;stop-opacity:0.4" />
+    </radialGradient>
+    <linearGradient id="waterGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0F2F7;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#B8D4E0;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 秋日天空 -->
+  <rect width="800" height="300" fill="url(#autumnGrad)"/>
+  
+  <!-- 残月（残月难及镜水） -->
+  <circle cx="650" cy="100" r="35" fill="url(#moonGrad4)"/>
+  <path d="M 650 65 L 650 135 A 35 35 0 0 1 650 65 Z" fill="url(#autumnGrad)"/>
+  
+  <!-- 镜水（水面） -->
+  <rect x="0" y="300" width="800" height="300" fill="url(#waterGrad3)"/>
+  
+  <!-- 水面反射（镜水） -->
+  <g opacity="0.4">
+    <circle cx="650" cy="500" r="30" fill="url(#moonGrad4)"/>
+    <path d="M 650 470 L 650 530 A 30 30 0 0 1 650 470 Z" fill="url(#waterGrad3)"/>
+  </g>
+  
+  <!-- 花落满城（左侧） -->
+  <g opacity="0.7">
+    <!-- 城市轮廓 -->
+    <rect x="50" y="200" width="25" height="100" fill="#8B9DC3" opacity="0.6"/>
+    <rect x="100" y="180" width="30" height="120" fill="#9CADC8" opacity="0.6"/>
+    <rect x="150" y="190" width="28" height="110" fill="#8B9DC3" opacity="0.6"/>
+    <rect x="200" y="170" width="32" height="130" fill="#9CADC8" opacity="0.6"/>
+    <!-- 飘落的花瓣 -->
+    <ellipse cx="80" cy="250" rx="6" ry="10" fill="#FFB6C1" transform="rotate(-30 80 250)"/>
+    <ellipse cx="120" cy="280" rx="5" ry="9" fill="#FFC0CB" transform="rotate(20 120 280)"/>
+    <ellipse cx="160" cy="260" rx="7" ry="11" fill="#FFB6C1" transform="rotate(-15 160 260)"/>
+    <ellipse cx="220" cy="290" rx="5" ry="9" fill="#FFC0CB" transform="rotate(25 220 290)"/>
+    <ellipse cx="100" cy="320" rx="6" ry="10" fill="#FFB6C1" transform="rotate(-20 100 320)"/>
+    <ellipse cx="180" cy="340" rx="5" ry="9" fill="#FFC0CB" transform="rotate(15 180 340)"/>
+  </g>
+  
+  <!-- 芙蓉（秋风不解芙蓉） -->
+  <g transform="translate(300, 250)" opacity="0.8">
+    <ellipse cx="0" cy="0" rx="20" ry="30" fill="#FFB6C1" transform="rotate(-10 0 0)"/>
+    <ellipse cx="15" cy="-10" rx="18" ry="28" fill="#FFC0CB" transform="rotate(15 15 -10)"/>
+    <circle cx="10" cy="-5" r="6" fill="#FFD700"/>
+    <!-- 荷叶 -->
+    <ellipse cx="0" cy="50" rx="35" ry="25" fill="#228B22" transform="rotate(-20 0 50)"/>
+  </g>
+  
+  <!-- 秋风（风） -->
+  <g opacity="0.4">
+    <path d="M 250 200 Q 280 180 310 200 Q 340 220 370 200" 
+          stroke="#E0E0E0" stroke-width="2" fill="none"/>
+    <path d="M 260 220 Q 290 200 320 220 Q 350 240 380 220" 
+          stroke="#E0E0E0" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- 云飘万里（右侧） -->
+  <g opacity="0.6">
+    <ellipse cx="600" cy="150" rx="50" ry="20" fill="#FFFFFF"/>
+    <ellipse cx="630" cy="150" rx="40" ry="18" fill="#FFFFFF"/>
+    <ellipse cx="650" cy="150" rx="35" ry="16" fill="#FFFFFF"/>
+    <ellipse cx="550" cy="180" rx="45" ry="18" fill="#FFFFFF"/>
+    <ellipse cx="580" cy="180" rx="38" ry="16" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- 前行的路径（定心向前，路漫吾闲） -->
+  <path d="M 200 400 Q 400 380 600 360" stroke="#FFD700" stroke-width="2" 
+        fill="none" stroke-dasharray="8,4" opacity="0.6"/>
+  
+  <!-- 文字 -->
+  <text x="400" y="570" font-family="serif" font-size="18" fill="#4A5568" 
+        text-anchor="middle" opacity="0.8">对联</text>
+</svg>

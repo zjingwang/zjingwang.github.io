@@ -13,5 +13,7 @@ draft: false
 featuredImage: "/images/miao-shou-ou-de.svg"
 ---
 
-红斤翠袖长亭，青烟绿水浮萍，残花败柳哀铃。
+<p style="line-height: 2.5; font-size: 1.1em;">
+红斤翠袖长亭，青烟绿水浮萍，残花败柳哀铃。<br>
 孤舟轻行，折翼鸟盼天明。
+</p>
