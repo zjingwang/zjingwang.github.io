@@ -4,45 +4,278 @@
 This is a Hugo static site project using the Eureka theme, deployed to GitHub Pages.
 
 ## Technology Stack
-- **Static Site Generator**: Hugo (v0.110.0+)
-- **Theme**: Eureka (wangchucheng.com/hugo-eureka)
+- **Static Site Generator**: Hugo (v0.111.0, recommended v0.110.0+)
+- **Theme**: Eureka v0.9.3 (wangchucheng.com/hugo-eureka)
+- **Installation Method**: Hugo Modules (requires Go 1.12+)
 - **Deployment**: GitHub Pages via GitHub Actions
-- **Content Format**: Markdown with frontmatter
+- **Content Format**: Markdown with YAML frontmatter
+- **Documentation**: 
+  - Hugo: https://gohugo.io/documentation/
+  - Eureka: https://www.wangchucheng.com/zh/docs/hugo-eureka/getting-started/
 
 ## Project Structure
-- `content/` - All content files (posts, docs, pages)
+- `content/` - All content files (posts, docs, pages, authors)
+  - `content/posts/` - Blog posts/articles
+  - `content/docs/` - Documentation pages (hierarchical structure)
+  - `content/homepage/` - Homepage widgets and pages
+  - `content/authors/` - Author information
 - `config/_default/` - Hugo configuration files
-- `layouts/` - Custom templates and layouts
-- `static/` - Static assets (images, JS, CSS)
-- `assets/` - Source assets that may be processed
+  - `config.yaml` - Main configuration
+  - `params.yaml` - Theme parameters and settings
+  - `menus.yaml` - Navigation menu configuration
+  - `languages.yaml` - Language settings
+- `layouts/` - Custom templates and layouts (overrides theme templates)
+  - `layouts/_default/` - Default page templates
+  - `layouts/partials/` - Reusable template partials
+  - `layouts/components/` - Template components
+- `static/` - Static assets (images, JS, CSS) - copied directly to output
+- `assets/` - Source assets that may be processed by Hugo Pipes
+- `archetypes/` - Content templates for `hugo new` command
 - `.github/workflows/` - GitHub Actions workflows
+- `go.mod` - Hugo Modules configuration
 
 ## Content Management
-- Content files are in Markdown format with YAML frontmatter
-- Posts go in `content/posts/`
-- Documentation goes in `content/docs/`
-- Pages go in `content/homepage/`
-- Author information in `content/authors/`
+
+### Content Types (Eureka Archetypes)
+Eureka provides several content types via archetypes:
+- **posts**: Blog posts/articles (`hugo new posts/article-name.md`)
+- **docs**: Documentation pages (`hugo new docs/topic/doc-name.md`)
+- **homepage**: Homepage widgets (`hugo new homepage/page-name.md`)
+- **authors**: Author profiles (`hugo new -k authors authors/author-name`)
+
+### Content File Structure
+- All content files use Markdown format with YAML frontmatter
+- Frontmatter must include: `title`, `date`, `draft` (set to `false` for published content)
+- Optional frontmatter: `description`, `tags`, `categories`, `authors`, `series`, `featuredImage`, `toc`, `enableComment`
+- Use `hugo new` command to create content with proper archetype templates
+
+### Content Organization
+- **Posts**: `content/posts/` - Flat structure, use tags and categories for organization
+- **Docs**: `content/docs/` - Hierarchical structure (e.g., `docs/topic/details/doc.md`)
+  - Use `_index.md` files for section landing pages
+- **Homepage**: `content/homepage/` - Widget-based pages (experience, about, etc.)
+- **Authors**: `content/authors/` - Author profiles with `_index.md` for author listing
+
+### Draft Content
+- Set `draft: true` in frontmatter to prevent publishing
+- Use `hugo server -D` to preview draft content locally
+- Drafts are excluded from production builds
 
 ## Code Style Guidelines
 - Use consistent Markdown formatting
 - Frontmatter should include: title, date, tags/categories when applicable
 - Follow existing content structure patterns
 - Use Chinese language for content (defaultContentLanguage: zh)
+- Date format: ISO 8601 (e.g., `2025-01-15T16:10:00+08:00`)
+- Use YAML frontmatter (not TOML or JSON)
 
 ## Hugo Commands
-- `hugo` - Build site locally
-- `hugo server` - Start local development server
+
+### Development
+- `hugo server` - Start local development server (http://localhost:1313)
+- `hugo server -D` - Include draft content in preview
+- `hugo server --bind 0.0.0.0 --port 1313` - Bind to all interfaces
+
+### Content Creation
+- `hugo new posts/article-name.md` - Create new post
+- `hugo new docs/topic/doc-name.md` - Create new documentation page
+- `hugo new -k authors authors/author-name` - Create author profile
+- `hugo new homepage/page-name.md` - Create homepage widget
+
+### Building
+- `hugo` - Build site (excludes drafts)
 - `hugo --gc --minify` - Build for production with garbage collection and minification
+- `hugo --cleanDestinationDir` - Clean destination directory before build
+
+### Hugo Modules
+- `hugo mod download` - Download Hugo Modules dependencies
+- `hugo mod clean` - Clean module cache
+- `hugo mod tidy` - Remove unused dependencies
+
+## Configuration Files
+
+### config.yaml (Main Configuration)
+- `baseURL`: https://zjingwang.github.io/
+- `theme`: wangchucheng.com/hugo-eureka (Hugo Modules)
+- `defaultContentLanguage`: zh (Chinese)
+- `hasCJKLanguage`: true (for Chinese/Japanese/Korean)
+- `paginate`: 3 (posts per page) - Note: deprecated in v0.128.0+, use `pagination.pagerSize` instead
+- `taxonomies`: categories, tags, series, authors
+- `markup`: Goldmark renderer with table of contents support
+- `outputs`: HTML, RSS, JSON for home page
+
+### params.yaml (Eureka Theme Settings)
+- `mainSections`: ["posts"] - Main content sections
+- `siteType`: Person - Schema.org type
+- `colorScheme`: auto/light/dark - Theme color mode
+- `highlight`: Code highlighting (highlightjs)
+- `math`: Math rendering (katex)
+- `comment`: Comment system (utterances/disqus/valine/commento)
+- `icon`: Site icon path
+- `dateFormat`: Date display format
+
+### menus.yaml (Navigation)
+- Define main navigation menu items
+- Each item has: `name`, `url`, `weight` (for ordering)
+- Current menu: 关于我, 文章, 日常, 其他, 日志, 统计
+
+### languages.yaml (Multilingual)
+- Configure language-specific settings
+- Default language: zh (Chinese)
+- `defaultContentLanguageInSubdir`: true
+
+## Hugo Core Concepts
+
+### Content Organization
+- Hugo uses a content-first approach
+- Content files are organized by type and section
+- Frontmatter defines metadata and behavior
+- Markdown content follows frontmatter
+
+### Templates and Layouts
+- Templates use Go template syntax
+- Layout hierarchy: `_default/baseof.html` → section layout → type layout
+- Partials are reusable template fragments
+- Lookup order: `layouts/` → `themes/eureka/layouts/`
+- Custom layouts in `layouts/` override theme layouts
+- Use `{{ partial "partial-name.html" . }}` to include partials
+
+### Hugo Pipes
+- Process assets (CSS, JS, images) during build
+- Use `resources.Get` and `resources.FromString` in templates
+- Supports PostCSS, SASS, minification, etc.
+- Assets in `assets/` are processed, `static/` are copied as-is
+- If encountering POSTCSS errors, ensure Hugo version is 0.100.0 or higher
+
+### Taxonomies
+- Default: categories, tags
+- Custom: series, authors
+- Access in templates via `.Site.Taxonomies`
+- Taxonomy pages auto-generated
+- Use `{{ range .Site.Taxonomies.tags }}` to iterate
+
+### Shortcodes
+- Reusable content snippets: `{{< shortcode-name >}}`
+- Eureka provides built-in shortcodes
+- Custom shortcodes in `layouts/shortcodes/`
+- Use `{{< shortcode param="value" >}}` syntax
+
+## Eureka Theme Specifics
+
+### Widget System
+- Homepage widgets: experience, about, pages, etc.
+- Configure in `content/homepage/` with widget handlers
+- Widget types defined in theme's `archetypes/`
+- Each widget has specific frontmatter requirements
+
+### Content Types
+- Posts: Standard blog posts with tags/categories
+- Docs: Hierarchical documentation with table of contents
+- Authors: Author profiles with social links
+- Homepage: Special pages for homepage sections
+
+### Customization
+- Override theme templates by copying to `layouts/`
+- Modify styles via `assets/` or `static/`
+- Configure via `params.yaml` and `config.yaml`
+- Use partials for reusable components
+- Never modify theme files directly (use Hugo Modules)
+
+### Best Practices
+- Always test locally before deploying
+- Use draft mode for work-in-progress content
+- Keep frontmatter consistent across content types
+- Follow Eureka's content structure conventions
+- Reference Eureka documentation for widget configuration
+- Use `hugo mod` commands to update theme
 
 ## Git Workflow
 - Main branch: `main`
 - Auto-deployment: Pushes to main trigger GitHub Actions workflow
 - Never commit `public/` directory (it's in .gitignore)
+- Commit messages follow Angular commit convention (feat, fix, docs, etc.)
 
 ## Important Notes
 - Base URL: https://zjingwang.github.io/
-- The site uses Hugo Modules for theme management
+- The site uses Hugo Modules for theme management (requires Go 1.12+)
+- Theme version: Eureka v0.9.3
 - GitHub Actions automatically builds and deploys on push to main
 - Local development: run `hugo server` and visit http://localhost:1313
+- Hugo version: v0.111.0 (compatible with Eureka v0.9.3)
+- If encountering POSTCSS errors, ensure Hugo version is 0.100.0 or higher
+- Use `hugo mod clean` if experiencing module cache issues
+- Use `/data/tools/hugo/hugo` if PATH has multiple Hugo versions
 
+## Document Creation and Preview Workflow
+
+### Default Workflow for New Documents
+When creating new documents (posts, docs, or pages), follow this workflow:
+
+1. **Create the document** using Hugo commands or manually:
+   ```bash
+   hugo new posts/article-name.md
+   hugo new docs/topic/details/doc-name.md
+   hugo new homepage/page-name.md
+   ```
+
+2. **Start preview server** (default action after creating documents):
+   ```bash
+   hugo server -D
+   ```
+   - Server runs on http://localhost:1313 by default
+   - Use `hugo server -D` to include draft content
+   - Use `/data/tools/hugo/hugo` if PATH has multiple Hugo versions
+
+3. **Browse and test the new page** using Browser tools:
+   - Navigate to the new page URL (e.g., http://localhost:1313/posts/article-name/)
+   - Verify the page renders correctly
+   - Check that all features work as expected:
+     - Page title and metadata display correctly
+     - Content formatting is proper
+     - Navigation links work
+     - Images and assets load correctly
+     - Responsive layout works
+     - Table of contents (if enabled) displays correctly
+     - Tags and categories appear properly
+
+4. **Verify functionality**:
+   - Test page navigation (back/forward, menu links)
+   - Check search functionality if applicable
+   - Verify tags and categories display correctly
+   - Ensure author information is shown properly
+   - Test any interactive elements
+   - Verify comment system works (if enabled)
+
+### Browser Testing Guidelines
+- Always use Browser tools to visually inspect new pages
+- Test on the actual rendered page, not just the Markdown source
+- Verify both desktop and mobile views if possible
+- Check console for any JavaScript errors
+- Ensure all links and navigation work correctly
+- Verify images load and display properly
+- Check that code blocks are highlighted correctly
+
+### Preview Best Practices
+- Preview should be the default step after creating any new content
+- Don't skip preview even for simple documents
+- Fix any issues found during preview before committing
+- Document any known issues or limitations in comments
+- Test with `draft: false` before final commit
+- Verify frontmatter is correctly formatted
+
+## Troubleshooting
+
+### Common Issues
+- **POSTCSS errors**: Upgrade Hugo to 0.100.0+ or use `hugo mod clean`
+- **Module cache issues**: Run `hugo mod clean` and `hugo mod download`
+- **Date parsing errors**: Ensure `lastmod` field uses valid ISO 8601 format
+- **Template not found**: Check layout lookup order and file paths
+- **Assets not loading**: Verify paths in `static/` or `assets/` directories
+- **Build failures**: Check Hugo version compatibility with Eureka theme
+
+### Debugging Tips
+- Use `hugo server --verbose` for detailed build information
+- Check `resources/_gen/` for processed assets
+- Review browser console for JavaScript errors
+- Validate YAML frontmatter syntax
+- Test with minimal content to isolate issues
