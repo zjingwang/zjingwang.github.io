@@ -38,7 +38,7 @@ bazelisk build execute_query.so
 ./execute_query.so: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by ./execute_query.so)
 ./execute_query.so: /lib64/libm.so.6: version `GLIBC_2.29' not found (required by ./execute_query.so)
         linux-vdso.so.1 (0x00007ffed8c33000)
-        /opt/ZTE-UDS-DRM/libftagtctr.so (0x00007ff4806fe000)
+        /opt/custom-lib/libftagtctr.so (0x00007ff4806fe000)
         libpthread.so.0 => /lib64/libpthread.so.0 (0x00007ff4804de000)
         libm.so.6 => /lib64/libm.so.6 (0x00007ff48015c000)
         libstdc++.so.6 => /lib64/libstdc++.so.6 (0x00007ff47fdc7000)
